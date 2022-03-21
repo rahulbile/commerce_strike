@@ -1,0 +1,16 @@
+{
+    "name": "drupal/commerce_strike",
+    "type": "drupal-module",
+    "description": "Provides Bitcoin-Lightning payment gateway powered by Strike",
+    "homepage": "http://drupal.org/project/commerce_strike",
+    "license": "GPL-2.0+",
+    "keywords": ["Drupal"],
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/commerce_strike",
+        "source": "http://cgit.drupalcode.org/commerce_strike"
+    },
+    "require": {
+        "drupal/commerce": "~2.0",
+    }
+}

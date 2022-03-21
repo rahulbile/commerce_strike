@@ -1,0 +1,8 @@
+name: Commerce Strike
+type: module
+description: 'Provides Bitcoin-Lightning payment gateway powered by Strike'
+package: Commerce
+core_version_requirement: ^8.9 || ^9
+dependencies:
+  - commerce:commerce
+  - commerce:commerce_payment

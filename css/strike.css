@@ -1,0 +1,18 @@
+.payment_box .strike-invoice-card-message {
+  border-radius: 30px;
+  font-size: 17px;
+  font-family: Montserrat;
+  min-height: 112px;
+  border: 32px;
+  line-height: 112px;
+  text-align: center;
+}
+
+.strikeInvoiceCopyButton:hover {
+  background-color: transparent;
+}
+
+.strikeInvoiceCopyButton {
+  right: 0px !important;
+  top: 5px !important;
+}
