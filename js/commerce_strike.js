@@ -20,6 +20,7 @@
           strikeJS.generateInvoice({
     				'element': '#strikeInvoiceCard',
     				'amount': parseFloat(drupalSettings.commerceStrike.totalAmount),
+            'correlationId': 'drupal-' + drupalSettings.commerceStrike.moduleVersion,
     				'currency': drupalSettings.commerceStrike.currency,
     				'redirectUrl': baseUrl + '/strike-capture-payment?order_id=' + drupalSettings.commerceStrike.commerce_order_id,
     				'apiUrl': drupalSettings.commerceStrike.apiUrl,

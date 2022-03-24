@@ -89,12 +89,15 @@ class StrikeForm extends BasePaymentOffsiteForm {
 
     $element['#attached']['library'][] = 'commerce_strike/strike';
     $element['#attached']['library'][] = 'commerce_strike/form';
+    $moduleVersion = drupal_get_installed_schema_version('commerce_strike');
+
     $element['#attached']['drupalSettings']['commerceStrike'] = [
       'apiKey' => $plugin->getApiKey(),
       'apiUrl' => $apiUrl,
       'currency' => $plugin->getCurrency(),
       'totalAmount' => $amount,
       'commerce_order_id' => $order_id,
+      'moduleVersion' => $moduleVersion,
     ];
 
 
