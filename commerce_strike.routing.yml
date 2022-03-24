@@ -1,0 +1,8 @@
+commerce_strike.strike-capture-payment:
+  path: '/strike-capture-payment'
+  defaults:
+    _controller: '\Drupal\commerce_strike\Controller\Controller::capturePayment'
+  requirements:
+    _access: 'TRUE'
+      #@TODO to be changed later.
+      # Needs to be accessed by an anonymous user.

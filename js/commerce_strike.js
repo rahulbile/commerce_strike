@@ -11,24 +11,20 @@
       if (!drupalSettings.commerceStrike || !drupalSettings.commerceStrike.apiKey) {
         return;
       }
-      Drupal.strikePaymentSuccessCalback = function(successParam) {
-       $("[name='payment_information[add_payment_method][payment_details][strike_invoiceId]']").val(successParam.invoiceId);
-       $('#edit-actions-next').prop('disabled', false).click();
-      }
+
       $('.strike-form', context).once('strike-processed').each(function () {
         var $form = $(this).closest('form');
         $form.find('#edit-actions-next').prop('value', 'Scan QR and Pay').prop('disabled', true);
+        var baseUrl =  window.location.origin + '/' + window.location.pathname.split ('/') [1] + '/';
         try {
           strikeJS.generateInvoice({
-    				'debug': true,
     				'element': '#strikeInvoiceCard',
-    				'amount': parseFloat(.01),
+    				'amount': parseFloat(drupalSettings.commerceStrike.totalAmount),
     				'currency': drupalSettings.commerceStrike.currency,
-    				'redirectCallback': Drupal.strikePaymentSuccessCalback,
+    				'redirectUrl': baseUrl + '/strike-capture-payment?order_id=' + drupalSettings.commerceStrike.commerce_order_id,
     				'apiUrl': drupalSettings.commerceStrike.apiUrl,
     				'apiKey': drupalSettings.commerceStrike.apiKey
     			});
-
         } catch (e) {
           $form.find('#payment-errors').html(Drupal.theme('commerceStrikeError', e.message));
           $form.find(':input.button--primary').prop('disabled', true);

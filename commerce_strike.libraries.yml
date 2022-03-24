@@ -1,20 +1,10 @@
 strike:
-  version: 9.1
-  css:
-    theme:
-      css/strike.css: {}
+  version: 12.2
   js:
     js/strike.min.js: {}
-  dependencies:
-    - core/jquery
-    - core/drupal
-form:
-  version: 9.1
-  js:
     js/commerce_strike.js: {}
   dependencies:
     - core/jquery
     - core/once
     - core/drupal
     - core/drupalSettings
-    - commerce_strike/strike
